@@ -1,0 +1,129 @@
+@use 'src/styles/mixins';
+@use 'src/styles/function';
+
+.button {
+  all: unset;
+
+  cursor: pointer;
+
+  box-sizing: border-box;
+  color: inherit;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: function.px-to-unit(6) function.px-to-unit(28);
+  gap: function.px-to-unit(10);
+  border-radius: 4px;
+
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 24px;
+
+  box-shadow:
+    rgba(50, 50, 93, 0.25) 0 function.px-to-unit(50) function.px-to-unit(100)
+      function.px-to-unit(-20),
+    rgba(0, 0, 0, 0.3) 0 function.px-to-unit(30) function.px-to-unit(60)
+      function.px-to-unit(-30),
+    rgba(10, 37, 64, 0.35) 0 function.px-to-unit(-2) function.px-to-unit(6) 0
+      inset;
+
+  &:focus-visible {
+    outline: 2px solid var(--color-info-500);
+  }
+}
+
+.primary {
+  background-color: var(--color-accent-500);
+
+  &:hover {
+    background-color: var(--color-accent-300);
+  }
+
+  &:active {
+    background-color: var(--color-accent-700);
+  }
+
+  &:focus {
+    background-color: var(--color-accent-500);
+  }
+
+  &:disabled {
+    background-color: var(--color-accent-900);
+    box-shadow: 0 function.px-to-unit(4) function.px-to-unit(18) 0
+      rgba(140, 97, 255, 0.35);
+    color: var(--color-light-900);
+    cursor: unset;
+
+    &:hover {
+      background-color: var(--color-accent-900);
+    }
+  }
+}
+
+.secondary {
+  background-color: var(--color-dark-300);
+
+  &:hover {
+    background-color: var(--color-dark-100);
+  }
+
+  &:active {
+    background-color: var(--color-dark-500);
+  }
+
+  &:focus {
+    background-color: var(--color-dark-300);
+  }
+
+  &:disabled {
+    background-color: var(--color-dark-300);
+    box-shadow: 0 function.px-to-unit(2) function.px-to-unit(10)
+      rgb(109, 109, 109, 0.25);
+    color: var(--color-light-900);
+    cursor: unset;
+
+    &:hover {
+      background-color: var(--color-dark-300);
+    }
+  }
+}
+
+.icon {
+  padding: function.px-to-unit(6);
+  border-radius: 50%;
+  background: #6495ed;
+
+  &:hover {
+    background-color: var(--color-dark-300);
+  }
+
+  &:active {
+    background-color: var(--color-dark-500);
+  }
+
+  &:focus {
+    background-color: var(--color-dark-300);
+  }
+
+  &:disabled {
+    color: var(--color-dark-300);
+    fill: var(--color-dark-300);
+    box-shadow: none;
+    cursor: unset;
+  }
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+.left {
+  flex-direction: row;
+}
+
+.right {
+  flex-direction: row-reverse;
+}
