@@ -1,0 +1,7 @@
+export { default as Cubator } from './Cubator'
+export { default as Ellipse } from './Ellipse'
+export { default as In } from './In'
+export { default as It } from './It'
+export { default as Logo } from './Logo'
+export { default as Path4 } from './Path4'
+export { default as Path12 } from './Path12'
