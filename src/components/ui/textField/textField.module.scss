@@ -1,0 +1,130 @@
+.container {
+  //margin: 0 auto;
+  display: block;
+  //width: 300px;
+
+  .label {
+    color: var(--color-dark-100);
+  }
+
+  .inputWrapper {
+    display: flex;
+    align-items: center;
+    position: relative;
+    //padding-bottom: 5px;
+
+    .clearFieldBtn {
+      display: flex;
+      position: absolute;
+      background: no-repeat;
+      right: 10px;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      &:focus,
+      &:focus-visible:not(:disabled) {
+        outline: none;
+        border: solid 1px var(--color-info-700);
+        box-shadow: inset 0 0 7px 0 var(--color-info-700);
+      }
+
+      & svg {
+        width: 16px;
+        height: 16px;
+      }
+    }
+
+    .input {
+      width: 100%;
+      height: 36px;
+      padding: 6px 12px;
+      background-color: transparent;
+      border: 1px solid #4c4c4c;
+      border-radius: 2px;
+      box-sizing: border-box;
+
+      &:disabled {
+        color: var(--color-dark-300);
+      }
+
+      &:focus,
+      &:focus-visible:not(:disabled) {
+        outline: none;
+        border: solid 1px var(--color-info-700);
+        box-shadow: inset 0 0 7px 0 var(--color-info-700);
+      }
+
+      &:hover:not(:disabled) {
+        border-color: var(--color-dark-100);
+        background: var(--color-dark-700);
+      }
+
+      &:active:not(:disabled) {
+        border-color: var(--color-light-100);
+      }
+    }
+
+    .eyeToggle:not(:disabled) {
+      display: flex;
+      position: absolute;
+      right: 12px;
+      background: none;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+
+      &:focus-visible {
+        outline: none;
+        box-shadow:
+          0 0 7px 0 var(--color-info-700),
+          inset 0 0 7px 0 var(--color-light-300);
+        //filter: drop-shadow(0 0 2px var(--color-info-900));
+        border-radius: 50px;
+      }
+
+      & svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+
+    .input[type='password']:disabled,
+    input[type='text']:disabled ~ .eyeToggle {
+      pointer-events: none;
+      cursor: unset;
+      color: var(--color-dark-300);
+    }
+
+    .input[type='search']::-webkit-search-cancel-button,
+    .input[type='search']::-webkit-search-decoration {
+      display: none;
+      appearance: none;
+      background-color: transparent;
+      outline: none;
+    }
+
+    .input.search {
+      padding: 6px 12px 6px 41px;
+    }
+
+    .input.password {
+      padding: 6px 41px 6px 12px;
+    }
+
+    .searchIcon {
+      all: unset;
+      position: absolute;
+      left: 12px;
+      color: var(--color-dark-100);
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  .errorMessage {
+    display: ruby;
+    //word-wrap: break-word;
+    //white-space: normal;
+    //width: inherit;
+  }
+}
