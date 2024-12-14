@@ -1,0 +1,88 @@
+@use '../../../styles/mixins' as mixins;
+@use '../../../styles/function' as function;
+
+.container {
+  @include mixins.display-flex(flex, center);
+}
+
+.btnWrapper {
+  @include mixins.screen-size(function.px-to-unit(36), function.px-to-unit(36));
+  @include mixins.display-flex(flex, center, center);
+  border-radius: 50px;
+}
+
+.label {
+  cursor: pointer;
+  @include mixins.display-flex(inline-flex, center, $gap: 8px);
+  //padding: function.px-to-unit(5);
+
+  &:hover:not(.disabled) .btnWrapper {
+    background: var(--color-dark-500);
+    @include mixins.checkbox-shadow(var(--color-dark-500));
+  }
+
+  &:focus-visible:not(.disabled) .btnWrapper,
+  &:focus-within:not(.disabled) .btnWrapper {
+    background: var(--color-dark-300);
+    @include mixins.checkbox-shadow(var(--color-dark-300));
+  }
+
+  &:active:not(.disabled) .btnWrapper,
+  &:focus:not(.disabled) .btnWrapper {
+    background: var(--color-dark-100);
+    @include mixins.checkbox-shadow(var(--color-dark-100));
+  }
+
+  &.disabled {
+    cursor: default;
+    color: var(--color-dark-100);
+
+    .indicator path {
+      fill: var(--color-dark-100);
+    }
+  }
+}
+
+.root {
+  all: unset;
+  cursor: pointer;
+  @include mixins.screen-size(function.px-to-unit(18), function.px-to-unit(18));
+  @include mixins.display-flex(flex, center, center, $flex-shrink: 0);
+  border-radius: 2px;
+
+  &[data-state='unchecked'] {
+    @include mixins.screen-size(
+      function.px-to-unit(14),
+      function.px-to-unit(14)
+    );
+    border: 2px solid var(--color-light-900);
+    //outline: 2px solid var(--color-light-900); // Or
+  }
+
+  &:hover:not(.disabled) .btnWrapper {
+    background: var(--color-dark-500);
+    @include mixins.checkbox-shadow(var(--color-dark-500));
+  }
+
+  &:active:not(.disabled) .btnWrapper,
+  &:focus:not(.disabled) .btnWrapper {
+    background: var(--color-dark-100);
+    @include mixins.checkbox-shadow(var(--color-dark-100));
+  }
+
+  &:focus-within:not(.disabled) .btnWrapper {
+    background: var(--color-dark-500);
+    @include mixins.checkbox-shadow(var(--color-dark-500));
+  }
+
+  &:disabled,
+  &.disabled {
+    cursor: inherit;
+    border: 2px solid var(--color-dark-100);
+  }
+}
+
+.indicator {
+  @include mixins.screen-size(function.px-to-unit(19));
+  //width: 19px;
+}
