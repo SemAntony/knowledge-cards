@@ -1,0 +1,37 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.headCell {
+  text-align: left;
+  padding: 6px 24px;
+  height: 36px;
+  background: var(--color-dark-500);
+}
+
+.empty {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.table {
+  border: 1px solid var(--color-dark-300);
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.tableCell {
+  text-align: left;
+  padding: 6px 24px;
+}
+
+.row {
+  border: 1px solid var(--color-dark-300);
+
+  &:hover {
+    background: var(--color-dark-700);
+  }
+}

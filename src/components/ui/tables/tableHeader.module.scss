@@ -1,0 +1,15 @@
+.activeHeadCell {
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+
+  &:hover {
+    background-color: var(--color-dark-300);
+  }
+}
+
+.sortCell {
+  display: flex;
+  align-items: center;
+  //justify-content: center;
+  gap: 5px;
+}
