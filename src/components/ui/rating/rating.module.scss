@@ -1,0 +1,24 @@
+.star {
+  width: 16px;
+  height: 16px;
+  margin-right: 4px;
+  display: inline-flex;
+  color: yellow;
+}
+
+.halfFilled {
+  position: absolute;
+  top: 0;
+  left: 0;
+  clip-path: inset(0 50% 0 0);
+}
+
+.halfStarWrapper {
+  position: relative;
+  display: inline-flex;
+}
+
+.rating .star:last-child,
+.rating .halfStarWrapper:last-child .star {
+  margin-right: 0;
+}
